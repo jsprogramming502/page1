@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeFire TransFire - Premium Accounts</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #0a0e17;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            background: linear-gradient(to right, #ff8a00, #e52e71);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-top: 70px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+        
+        .hero-content h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #ff8a00, #e52e71);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff8a00, #e52e71);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(229, 46, 113, 0.4);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(229, 46, 113, 0.6);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 5rem 0;
+            background-color: #0f172a;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: #a1a1aa;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: #1e293b;
+            padding: 2rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 1px solid #334155;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border-color: #3b82f6;
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #3b82f6;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card p {
+            color: #a1a1aa;
+        }
+        
+        /* Accounts Section */
+        .accounts {
+            padding: 5rem 0;
+            background-color: #0a0e17;
+        }
+        
+        .accounts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .account-card {
+            background: #1e293b;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #334155;
+        }
+        
+        .account-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border-color: #3b82f6;
+        }
+        
+        .account-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .account-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .account-card:hover .account-image img {
+            transform: scale(1.1);
+        }
+        
+        .account-details {
+            padding: 1.5rem;
+        }
+        
+        .account-details h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .account-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            color: #a1a1aa;
+        }
+        
+        .account-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #3b82f6;
+            margin: 1rem 0;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 0;
+            background-color: #0f172a;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background: #1e293b;
+            padding: 2rem;
+            border-radius: 10px;
+            position: relative;
+            border: 1px solid #334155;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            font-size: 5rem;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            color: rgba(59, 130, 246, 0.2);
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #e2e8f0;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+        
+        .author-info p {
+            color: #a1a1aa;
+            font-size: 0.9rem;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 5rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: #e2e8f0;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #020617;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: #3b82f6;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column ul li a {
+            color: #a1a1aa;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #3b82f6;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #1e293b;
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: #3b82f6;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #1e293b;
+            color: #a1a1aa;
+            font-size: 0.9rem;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: #1e293b;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            border: 1px solid #3b82f6;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #a1a1aa;
+            transition: all 0.3s ease;
+        }
+        
+        .close-modal:hover {
+            color: #3b82f6;
+        }
+        
+        .modal h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: #3b82f6;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 5px;
+            border: 1px solid #334155;
+            background-color: #0f172a;
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 1rem;
+                justify-content: center;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .hero-content h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            .mobile-menu {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                color: white;
+            }
+            
+            nav {
+                display: none;
+                width: 100%;
+                margin-top: 1rem;
+            }
+            
+            nav.active {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img style="border-radius:20px"src="https://raw.githubusercontent.com/jsprogramming502/page4/refs/heads/main/flogo.png" alt="FreeFire Logo">
+                    <h1>TransFire</h1>
+                </div>
+                <div class="mobile-menu">☰</div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#accounts">Accounts</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>FreeFire Accounts-Transfer</h2>
+                <p>Get access to elite FreeFire accounts with rare skins, characters, and weapons. Level up your gaming experience instantly!</p>
+                <a href="#accounts" class="btn">Browse Accounts</a>
+                <a href="#" class="btn" id="contact-btn">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose TransFire?</h2>
+                <p>We provide the most secure and premium FreeFire accounts in the market with guaranteed satisfaction.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure Transactions</h3>
+                    <p>All transactions are encrypted and secure. Your payment information is always protected.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Instant Delivery</h3>
+                    <p>Receive your account credentials immediately after payment confirmation.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Account Guarantee</h3>
+                    <p>30-day guarantee on all accounts. If there are any issues, we'll replace it immediately.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accounts Section -->
+    <section class="accounts" id="accounts">
+        <div class="container">
+            <div class="section-title">
+                <h2>Premium Accounts</h2>
+                <p>Browse our selection of elite FreeFire accounts with rare items and high rankings.</p>
+            </div>
+            <div class="accounts-grid">
+                <div class="account-card">
+                    <div class="account-image">
+                        <img src="https://raw.githubusercontent.com/jsprogramming502/page4/refs/heads/main/59.jpeg" alt="Diamond Account">
+                    </div>
+                    <div class="account-details">
+                        <h3>Diamond Elite</h3>
+                        <div class="account-stats">
+                            <span>Level: 59</span>
+                            <span>K/D: 4.5</span>
+                        </div>
+                        <div class="account-price">$30.99</div>
+                        <p>Includes 10 legendary skins, all characters unlocked, and 20,000 diamonds.</p>
+                        <a href="#" class="btn buy-btn" data-account="Diamond Elite">Buy Now</a>
+                    </div>
+                </div>
+                <div class="account-card">
+                    <div class="account-image">
+                        <img src="https://raw.githubusercontent.com/jsprogramming502/page4/refs/heads/main/60.jpeg" alt="Gold Account">
+                    </div>
+                    <div class="account-details">
+                        <h3>Gold Pro</h3>
+                        <div class="account-stats">
+                            <span>Level: 53</span>
+                            <span>K/D: 3.2</span>
+                        </div>
+                        <div class="account-price">$18.99</div>
+                        <p>Includes 5 legendary skins, 15 characters, and 10,000 diamonds.</p>
+                        <a href="#" class="btn buy-btn" data-account="Gold Pro">Buy Now</a>
+                    </div>
+                </div>
+                <div class="account-card">
+                    <div class="account-image">
+                        <img src="https://raw.githubusercontent.com/jsprogramming502/page4/refs/heads/main/61.jpeg" alt="Silver Account">
+                    </div>
+                    <div class="account-details">
+                        <h3>Silver Ranked</h3>
+                        <div class="account-stats">
+                            <span>Level:64 </span>
+                            <span>K/D: 7.5</span>
+                        </div>
+                        <div class="account-price">$30.99</div>
+                        <p>Includes 3 legendary skins, 10 characters, and 5,000 diamonds.</p>
+                        <a href="#" class="btn buy-btn" data-account="Silver Ranked">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <!---<section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Player Reviews</h2>
+                <p>Hear what our customers say about their TransFire experience.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">I was skeptical at first, but the account I received was exactly as described. The process was smooth and the customer support was excellent!</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://via.placeholder.com/50x50" alt="User Avatar">
+                            </div>
+                            <div class="author-info">
+                                <h4>Mark Johnson</h4>
+                                <p>Diamond Elite Customer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">Best place to buy FreeFire accounts! I've purchased twice now and both times the accounts were perfect with all the promised items.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://via.placeholder.com/50x50" alt="User Avatar">
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah Williams</h4>
+                                <p>Gold Pro Customer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">Fast delivery and great value for money. The account had everything listed and more. Will definitely buy again when I need another account.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://via.placeholder.com/50x50" alt="User Avatar">
+                            </div>
+                            <div class="author-info">
+                                <h4>David Kim</h4>
+                                <p>Silver Ranked Customer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>--->
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Ready to Dominate FreeFire?</h2>
+            <p>Join thousands of players who have leveled up their gaming experience with TransFire premium accounts.</p>
+            <a href="#accounts" class="btn">Browse Accounts</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>TransFire</h3>
+                    <p>Your trusted source for premium FreeFire accounts since 2019.</p>
+                    <div class="social-links">
+                        <a href="https://page2file.netlify.app/"><span>FB</span></a>
+                        <a href="https://page2file.netlify.app/"><span>GL</span></a>
+                        <a href="https://page2file.netlify.app/"><span>TW</span></a>
+                        <a href="https://page2file.netlify.app/"><span>DC</span></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#accounts">Accounts</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Payment Methods</a></li>
+                        <li><a href="#">Account Guarantee</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 TransFire. Not affiliated with Garena or FreeFire. All game content is property of their respective owners.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div class="modal" id="contact-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Contact Us</h3>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject">
+                        <option value="general">General Inquiry</option>
+                        <option value="account">Account Question</option>
+                        <option value="payment">Payment Issue</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Purchase Modal -->
+    <div class="modal" id="purchase-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="purchase-title">Purchase Account</h3>
+            <form id="purchase-form">
+                <div class="form-group">
+                    <label for="purchase-email">Email Address</label>
+                    <input type="email" id="purchase-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="payment-method">Payment Method</label>
+                    <select id="payment-method" required>
+                        <option value="">Select Payment</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="credit">Credit Card</option>
+                        <option value="crypto">Cryptocurrency</option>
+                        <option value="gift">Gift Card</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Account Selected</label>
+                    <input type="text" id="selected-account" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Total Price</label>
+                    <input type="text" id="total-price" readonly>
+                </div>
+                <button type="submit" class="btn">Complete Purchase</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('nav').classList.remove('active');
+                }
+            });
+        });
+
+        // Modal Functionality
+        const contactBtn = document.getElementById('contact-btn');
+        const contactModal = document.getElementById('contact-modal');
+        const purchaseModal = document.getElementById('purchase-modal');
+        const closeButtons = document.querySelectorAll('.close-modal');
+        
+        // Open Contact Modal
+        contactBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            contactModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+        
+        // Open Purchase Modal when Buy Now is clicked
+        document.querySelectorAll('.buy-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const accountName = this.getAttribute('data-account');
+                const accountPrice = this.parentElement.querySelector('.account-price').textContent;
+                
+                document.getElementById('purchase-title').textContent = `Purchase ${accountName}`;
+                document.getElementById('selected-account').value = accountName;
+                document.getElementById('total-price').value = accountPrice;
+                
+                purchaseModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        // Close Modals
+        closeButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                contactModal.style.display = 'none';
+                purchaseModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target === contactModal) {
+                contactModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+            if (e.target === purchaseModal) {
+                purchaseModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Form Submissions
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            contactModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            this.reset();
+        });
+        
+        document.getElementById('purchase-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const accountName = document.getElementById('selected-account').value;
+            alert(`Thank you for your purchase of ${accountName}! Check your email for further instructions.`);
+            purchaseModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            this.reset();
+        });
+        
+        // Sticky Header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+    </script>
+</body>
+</html>
